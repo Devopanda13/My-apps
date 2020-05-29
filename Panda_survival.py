@@ -1,6 +1,6 @@
 
-import random
-import time
+from random import choice
+from time import sleep
 
 points=0
 
@@ -38,6 +38,7 @@ def start_loop():
         
         else:
             print("Congrats! You won a big bamboo tree for you and the Panda! \n")
+            panda_picture()
             break
 
     return points
@@ -51,22 +52,22 @@ def from_another_animal():
     "I have but I cannot share it. I keep it for later.", 
     "I can give you some if you guess my name. It's John, Julia or Jessie?"]
     
-    the_animal=random.choice(animals)
-    the_answer=random.choice(answers)
+    the_animal=choice(animals)
+    the_answer=choice(answers)
 
     print('Panda met a {} and it said: {}'.format(the_animal, the_answer))
 
     if the_answer== answers[0]:
         points += 20
-        time.sleep(4)
+        sleep(4)
         print('The nice animal gave you 20 bamboo and went away. Now you have {}.'.format(points))
     elif the_answer== answers[1]:
         points -= 10
-        time.sleep(4)
+        sleep(4)
         print ("The animal didn't share with you and you only wasted time and 10 bamboo. Now you have {}".format(points))
     elif the_answer== answers[2]:
         guess_name=input("Enter the name: ")
-        time.sleep(4)
+        sleep(4)
         guess_name=guess_name.lower().strip()
 
         if guess_name== "john" or guess_name== "julia":
@@ -82,7 +83,7 @@ def from_another_animal():
 def from_the_forest():
     global points
     Times=["8 o'clock in the morning", "1 o'clock in the afternoon", "5 o'clock in the afternoon", "10 o'clock in the evening"]
-    random_time=random.choice(Times)
+    random_time=choice(Times)
     print("It's {}. Are you sure you want to go now to the forest?".format(random_time))
     decision=input("yes/no: ")
 
@@ -110,7 +111,7 @@ def from_the_forest():
 def work_for_it():
     global points
     jobs= ['on cleaning a park', 'working in factory', 'in a library', 'as a postman']
-    current_job= random.choice(jobs)
+    current_job= choice(jobs)
     print(" Panda spent almost a whole day {}. ".format(current_job))
 
     if current_job== jobs[0]:
@@ -121,22 +122,51 @@ def work_for_it():
     elif current_job == jobs[1]:
         print('Panda was working hard many hours and is exhausted.')
         points -= 30
-        time.sleep(4)
+        sleep(4)
         print("For hard work you earn 50 bamboo but lose 20. Now you have {} bamboo.".format(points))
     elif current_job == jobs[2]:
         print('Panda was working in a library...if sleeping for the last 6h we can call "working".')
         points=points+ 50
-        time.sleep(4)
+        sleep(4)
         print("Panda said it's the favourite job. You earn 50 bamboo! Now you have {} bamboo.".format(points))
     elif current_job== jobs[3]:
         print("Panda did a loooot of kilometers on the bicycle and is barely alive.")
         points=points- 10
-        time.sleep(4)
+        sleep(4)
         print("It looks like Panda likes cycling but only to the nearest park. You lose 10 bamboo and now you have {}.".format(points))
     else:
         print("usp! some error!")
 
      
+def panda_picture():
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$**$$$$$$$$$**$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$'   ^$$$$$$F    *$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$     z$$$$$$L    ^$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$    e$$$$$$$$$e  J$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$eee$$$$$$$$$$$$$e$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$b$$$$$$$$$$$$$$$$$$*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$)$$$$P'e^$$$F$r*$$$$F'$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$d$$$$  'z$$$$'  $$$$%  $3$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$*'''*$$$  .$$$$$$ z$$$*   ^$e*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$'     *$$ee$$$$$$$$$$*'     $$$C$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$.      '***$$'''$$''        $$$$e*$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$b          '$b.$$'          $$$$$b'$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$c.         '''            $$$$$$$^$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$e..                     $$$$$$$$^$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$eeee..            J$$$$$$$$b'$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$r          z$$$$$$$$$$r$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'         z$$$$$**$$$$$^$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$*'          z$$$P'   ^*$$$ $$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$*'           .d$$$$       $$$ $$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$'           .e$$$$$F       3$$ $$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$.         .d$$$$$$$         $PJ$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$eeeeeeed$*''''**''         $\$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$                  $d$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$.                 $$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$e.              d$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$eeeeeee$$$$$$$$$$$$$$$$$$$$$$$$$$")
+    print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
 
 main()
