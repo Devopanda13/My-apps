@@ -117,11 +117,10 @@ def work_for_it():
     if current_job== jobs[0]:
         points += 25
         print('Great job! Panda earns 25 bamboo! Now you have {} bamboo. Not bad! \n'.format(points))
-        
         print()
     elif current_job == jobs[1]:
         print('Panda was working hard many hours and is exhausted.')
-        points -= 30
+        points += 30
         sleep(4)
         print("For hard work you earn 50 bamboo but lose 20. Now you have {} bamboo.".format(points))
     elif current_job == jobs[2]:
