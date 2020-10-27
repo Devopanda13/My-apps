@@ -1,4 +1,4 @@
-# My-apps
+# Panda_Survival
 
 See how fast you will manage to win the main prize!
 
